@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://cfeqd51wrwo6g"]
+[gd_scene load_steps=23 format=3 uid="uid://cfeqd51wrwo6g"]
 
 [ext_resource type="PackedScene" uid="uid://6ipmocyttfq3" path="res://scenes/BaseActor/base_actor.tscn" id="1_4ij0j"]
 [ext_resource type="Texture2D" uid="uid://wputs2kk6qqs" path="res://assets/Player/player_sprite_sheet.png" id="2_7apa5"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://yh2bnoht0gia" path="res://template/StateMachine/subclass/Player/states/player_attack.gd" id="8_dyy2g"]
 [ext_resource type="Script" uid="uid://lt4bkp3kakgn" path="res://template/StateMachine/subclass/Player/states/player_normal.gd" id="8_eoikv"]
 [ext_resource type="Script" uid="uid://bflas4wqwuj27" path="res://template/StateMachine/subclass/Player/states/player_dash.gd" id="10_f8w66"]
+[ext_resource type="Script" uid="uid://dgquhq5d23luo" path="res://template/StateMachine/subclass/Player/states/player_push.gd" id="10_q652m"]
 [ext_resource type="Script" uid="uid://dbwauju2xvo2v" path="res://template/StateMachine/subclass/Player/states/player_die.gd" id="11_64t0r"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7apa5"]
@@ -1451,6 +1452,7 @@ libraries = {
 
 [node name="PlayerStateMachine" parent="." index="5" instance=ExtResource("3_mkfyn")]
 script = ExtResource("4_8gpd1")
+verbose = true
 init_state_key = "Normal"
 
 [node name="PlayerNormal" type="Node" parent="PlayerStateMachine" index="0"]
@@ -1467,6 +1469,10 @@ metadata/_custom_type_script = "uid://cw434ej3iy2hq"
 
 [node name="PlayerDie" type="Node" parent="PlayerStateMachine" index="3"]
 script = ExtResource("11_64t0r")
+metadata/_custom_type_script = "uid://cw434ej3iy2hq"
+
+[node name="PlayerPush" type="Node" parent="PlayerStateMachine" index="4"]
+script = ExtResource("10_q652m")
 metadata/_custom_type_script = "uid://cw434ej3iy2hq"
 
 [node name="TimerManager" type="Node" parent="." index="6"]

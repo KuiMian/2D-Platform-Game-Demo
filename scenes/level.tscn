@@ -262,6 +262,7 @@ position = Vector2(216, 160)
 
 [node name="GroundButton" parent="." node_paths=PackedStringArray("doors") instance=ExtResource("6_t1rx8")]
 position = Vector2(136, 144)
+collision_mask = 10
 doors = [NodePath("../Door")]
 
 [node name="PushBox" parent="." instance=ExtResource("9_8c41q")]

@@ -84,7 +84,7 @@ func check_collider() -> void:
 			
 			if collider is PushBox:
 				if Input.is_action_just_pressed("push&drag"):
-					pass
+					force_transition.emit("Push")
 			
 
 #endregion normal state
@@ -135,9 +135,9 @@ func enter_die() -> void:
 #func process4die(_delta: float) -> void:
 	#pass
 #
-#func physics_process4die(_delta: float) -> void:
-	#pass
-#
+func physics_process4die(_delta: float) -> void:
+	reset_velocitiy()
+
 #func exit_die() -> void:
 	#pass
 
