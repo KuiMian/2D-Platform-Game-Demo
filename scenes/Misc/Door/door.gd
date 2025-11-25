@@ -17,16 +17,20 @@ func _ready() -> void:
 
 
 func open() -> void:
+	if animation_player.is_playing():
+		animation_player.pause()
+	
 	is_working = true
-	#animation_player.seek(progress, true)
 	animation_player.play("open")
 	
 	await animation_player.animation_finished
 	is_working = false
 
 func close() -> void:
+	if animation_player.is_playing():
+		animation_player.pause()
+	
 	is_working = true
-	#animation_player.seek(13 - progress, true)
 	animation_player.play_backwards("open")
 	
 	await animation_player.animation_finished

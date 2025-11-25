@@ -27,12 +27,12 @@ func _ready() -> void:
 
 func _on_area_entered(area: Area2D) -> void:
 	if area is Area2D and area.owner is Player:
-		var _door := doors[0]
-		if not _door.is_working:
-			open_flag = !open_flag
-			
-			for door in doors:
-				if open_flag:
-					(door as Door).open()
-				else:
-					(door as Door).close()
+		#var _door := doors[0]
+		#if not _door.is_working:
+		open_flag = !open_flag
+		
+		for door in doors:
+			if open_flag:
+				(door as Door).open()
+			else:
+				(door as Door).close()
