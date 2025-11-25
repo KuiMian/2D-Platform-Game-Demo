@@ -75,10 +75,16 @@ func update_animation() -> void:
 func check_collider() -> void:
 	if get_slide_collision_count() > 0:
 		for i in get_slide_collision_count():
-			var collider := get_slide_collision(i).get_collider()
+			var collision := get_slide_collision(i)
+			var collider := collision.get_collider()
+			
+			if collider is SpikePit:
+				#if collision.get_normal() == Vector2.UP:
+				force_transition.emit("Die")
+			
 			if collider is PushBox:
 				if Input.is_action_just_pressed("push&drag"):
-					force_transition.emit("Die")
+					pass
 			
 
 #endregion normal state

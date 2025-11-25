@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b44wpybcovdrq"]
+
+[ext_resource type="Script" uid="uid://ccyeslbsosd7e" path="res://scenes/Misc/SpikeClub/spike_club.gd" id="1_evhog"]
+
+[node name="SpikeClub" type="CharacterBody2D"]
+script = ExtResource("1_evhog")

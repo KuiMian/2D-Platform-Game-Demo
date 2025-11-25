@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://yjrrskqvxwd6"]
+
+[ext_resource type="Script" uid="uid://b114vs7r81e76" path="res://scenes/Misc/SpikePit/spike_pit.gd" id="1_oxph6"]
+[ext_resource type="Texture2D" uid="uid://cwkhf76yml1jp" path="res://assets/Objects/misc_sheet.png" id="2_1g300"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x7tb3"]
+size = Vector2(16, 16)
+
+[node name="SpikePit" type="StaticBody2D"]
+collision_mask = 2
+script = ExtResource("1_oxph6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -12)
+texture = ExtResource("2_1g300")
+region_enabled = true
+region_rect = Rect2(0, 168, 24, 24)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_x7tb3")
