@@ -1,0 +1,2 @@
+extends DetectBaseComponent
+class_name HitBoxArea

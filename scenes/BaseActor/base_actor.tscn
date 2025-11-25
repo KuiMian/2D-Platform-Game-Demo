@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://6ipmocyttfq3"]
+
+[ext_resource type="Script" uid="uid://b1vpc4yhiantp" path="res://scenes/BaseActor/base_actor.gd" id="1_gol2j"]
+[ext_resource type="PackedScene" uid="uid://b1d4hfr1shqi3" path="res://scenes/DetectBaseComponent/subclass/hit_box_area.tscn" id="2_e8pr3"]
+[ext_resource type="PackedScene" uid="uid://dhbr1isy34mws" path="res://scenes/DetectBaseComponent/subclass/hurt_box_area.tscn" id="3_jtv68"]
+
+[node name="BaseActor" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_gol2j")
+
+[node name="SpriteArea" type="Area2D" parent="." groups=["flippable"]]
+
+[node name="Sprite2D" type="Sprite2D" parent="SpriteArea"]
+
+[node name="BodyCollisionShape" type="CollisionShape2D" parent="." groups=["flippable"]]
+
+[node name="HitBoxArea" parent="." groups=["flippable"] instance=ExtResource("2_e8pr3")]
+
+[node name="HurtBoxArea" parent="." groups=["flippable"] instance=ExtResource("3_jtv68")]
+
+[node name="CollisionShape2D" parent="HurtBoxArea" index="0"]
+disabled = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[editable path="HitBoxArea"]
+[editable path="HurtBoxArea"]

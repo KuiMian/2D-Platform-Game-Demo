@@ -1,0 +1,7 @@
+1. autoload与静态类
+2. 状态节点的输入处理抽象问题
+3. owner.name与类名联动，有数字后缀需要处理
+4. attack状态下输入事件的影响程度？
+5. export & setter，见 detector component
+6. snap & floor
+7. animation_player.seek & 取巧

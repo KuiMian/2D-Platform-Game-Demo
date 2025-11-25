@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://b1d4hfr1shqi3"]
+
+[ext_resource type="PackedScene" uid="uid://co0mwholai7b6" path="res://scenes/DetectBaseComponent/detect_base_compnent.tscn" id="1_h5stb"]
+[ext_resource type="Script" uid="uid://bcd0fgwh0e2wq" path="res://scenes/DetectBaseComponent/subclass/hit_box_area.gd" id="2_v21c5"]
+
+[node name="HitBoxArea" instance=ExtResource("1_h5stb")]
+script = ExtResource("2_v21c5")
