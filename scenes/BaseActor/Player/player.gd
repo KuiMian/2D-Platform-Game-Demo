@@ -76,8 +76,9 @@ func check_collider() -> void:
 	if get_slide_collision_count() > 0:
 		for i in get_slide_collision_count():
 			var collider := get_slide_collision(i).get_collider()
-			if collider is Switch:
-				force_transition.emit("Die")
+			if collider is PushBox:
+				if Input.is_action_just_pressed("push&drag"):
+					force_transition.emit("Die")
 			
 
 #endregion normal state
