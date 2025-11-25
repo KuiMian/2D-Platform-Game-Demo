@@ -59,6 +59,8 @@ func physics_process4normal(delta: float) -> void:
 	apply_movement(delta)
 	
 	update_animation()
+	
+	check_collider()
 
 func exit_normal() -> void:
 	pass
@@ -69,6 +71,14 @@ func update_animation() -> void:
 		animation_player.play("walk" if velocity.x != 0 else "idle")
 	else:
 		animation_player.play("jump" if velocity.y <= 0 else "fall")
+
+func check_collider() -> void:
+	if get_slide_collision_count() > 0:
+		for i in get_slide_collision_count():
+			var collider := get_slide_collision(i).get_collider()
+			if collider is Switch:
+				force_transition.emit("Die")
+			
 
 #endregion normal state
 

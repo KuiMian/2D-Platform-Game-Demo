@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://cqafb5ph5wbw2"]
+[gd_scene load_steps=12 format=4 uid="uid://cqafb5ph5wbw2"]
 
 [ext_resource type="Texture2D" uid="uid://dj2yg01f6ty8k" path="res://assets/Backgrounds/background.png" id="1_2r41h"]
 [ext_resource type="Texture2D" uid="uid://brxwg1qdggtn7" path="res://assets/Backgrounds/bg_2.png" id="2_klq6b"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://ctiqtfphy5n84" path="res://scenes/Misc/GroundButton/ground_button.tscn" id="6_t1rx8"]
 [ext_resource type="PackedScene" uid="uid://b28ah5ima63om" path="res://scenes/Misc/Switch/switch.tscn" id="7_klq6b"]
 [ext_resource type="PackedScene" uid="uid://bb5fv5rv287o7" path="res://scenes/Misc/Door/door.tscn" id="8_b121j"]
+[ext_resource type="PackedScene" uid="uid://by4hknkl0wvs1" path="res://scenes/Misc/PushBox/push_box.tscn" id="9_8c41q"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p57ef"]
 texture = ExtResource("3_b121j")
@@ -261,3 +262,6 @@ position = Vector2(216, 160)
 [node name="GroundButton" parent="." node_paths=PackedStringArray("doors") instance=ExtResource("6_t1rx8")]
 position = Vector2(136, 144)
 doors = [NodePath("../Door")]
+
+[node name="PushBox" parent="." instance=ExtResource("9_8c41q")]
+position = Vector2(176, 160)

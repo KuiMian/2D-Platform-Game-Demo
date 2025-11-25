@@ -14,7 +14,6 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	is_idle = animation_player.current_animation == "idle" or not animation_player.is_playing()
-	print(is_idle)
 
 
 func open() -> void:
