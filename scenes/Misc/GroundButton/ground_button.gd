@@ -29,15 +29,15 @@ func _on_body_entered(body: CharacterBody2D) -> void:
 		is_pressed = true
 		
 		var _door := doors[0]
-		if not _door.is_working:
-			for door in doors:
-				(door as Door).open()
+		
+		for door in doors:
+			(door as Door).open()
 
 func _on_body_exited(body: CharacterBody2D) -> void:
 	if body is Player:
 		is_pressed = false
 		
 		var _door := doors[0]
-		if not _door.is_working:
-			for door in doors:
-				(door as Door).close()
+
+		for door in doors:
+			(door as Door).close()
