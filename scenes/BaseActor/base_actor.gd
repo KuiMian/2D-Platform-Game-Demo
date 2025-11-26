@@ -138,8 +138,8 @@ func apply_gravity(delta: float) -> void:
 		can_dash = true
 
 # 移动
-func apply_movement(delta: float) -> void:
-	var target_speed: float = move_direction * SPEED
+func apply_movement(delta: float, speed: float = SPEED) -> void:
+	var target_speed: float = move_direction * speed
 	
 	# 基于加速度移动
 	if USE_ACCELERATION:

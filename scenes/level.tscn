@@ -252,6 +252,7 @@ DEBUG = false
 
 [node name="Player" parent="." instance=ExtResource("5_olg7q")]
 position = Vector2(32, 80)
+push_factor = 50
 
 [node name="Switch" parent="." node_paths=PackedStringArray("doors") instance=ExtResource("7_klq6b")]
 position = Vector2(88, 144)
@@ -261,12 +262,11 @@ doors = [NodePath("../Door")]
 position = Vector2(216, 160)
 
 [node name="GroundButton" parent="." node_paths=PackedStringArray("doors") instance=ExtResource("6_t1rx8")]
-position = Vector2(136, 144)
-collision_mask = 10
+position = Vector2(72, 160)
 doors = [NodePath("../Door")]
 
 [node name="PushBox" parent="." instance=ExtResource("9_8c41q")]
-position = Vector2(280, 160)
+position = Vector2(48, 160)
 
 [node name="SpikePit" parent="." instance=ExtResource("10_olg7q")]
 position = Vector2(152, 176)

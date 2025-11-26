@@ -5,9 +5,15 @@ class_name Player
 @onready var hit_box_area: HitBoxArea = $HitBoxArea
 @onready var hurt_box_area: HurtBoxArea = $HurtBoxArea
 
+@export_subgroup("Skills physics/Push")
+@export var PUSH_SPEED := 100
+@export var push_factor = 50
+var push_collision: KinematicCollision2D
+var push_object: PushBox
+
 
 func debug() -> void:
-	print(sprite_area.scale.x)
+	print(push_factor)
 
 
 func _ready() -> void:
@@ -83,9 +89,27 @@ func check_collider() -> void:
 				force_transition.emit("Die")
 			
 			if collider is PushBox:
-				if Input.is_action_just_pressed("push&drag"):
+				if Input.is_action_just_pressed("push&drag") and get_main_axis_normal(collision.get_normal()).x != 0:
+					push_collision = collision
+					push_object = collider
 					force_transition.emit("Push")
+
+func get_main_axis_normal(normal: Vector2) -> Vector2:
+	var abs_x = abs(normal.x)
+	var abs_y = abs(normal.y)
+
+	if abs_x > abs_y:
+		if normal.x > 0:
+			return Vector2.RIGHT  # (1, 0)
+		else:
+			return Vector2.LEFT   # (-1, 0)
+	elif abs_y > 0:
+		if normal.y > 0:
+			return Vector2.DOWN   # (0, 1)
+		else:
+			return Vector2.UP     # (0, -1)
 			
+	return Vector2.ZERO
 
 #endregion normal state
 
@@ -145,6 +169,46 @@ func emit_die() -> void:
 	player_died.emit()
 
 #endregion die state
+
+#region push state
+
+func enter_push() -> void:
+	animation_player.play("push")
+	
+	reset_velocitiy()
+	
+	ban_skills()
+
+func process4push(_delta: float) -> void:
+	pass
+
+func physics_process4push(delta: float) -> void:
+	move_direction = sign(Input.get_axis("move_left", "move_right"))
+	
+	apply_movement(delta, PUSH_SPEED)
+	
+	#print(push_power)
+	(push_object as PushBox).apply_central_impulse(- push_collision.get_normal() * push_factor)
+
+
+func exit_push() -> void:
+	reset_skills()
+	
+	push_object = null
+	push_collision = null
+
+
+func ban_skills() -> void:
+	can_jump = false
+	can_dash = false
+	can_fly = false
+
+func reset_skills() -> void:
+	can_jump = true
+	can_dash = true
+	can_fly = true
+
+#endregion push state
 
 #region xxx state
 

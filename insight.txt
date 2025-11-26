@@ -5,3 +5,6 @@
 5. export & setter，见 detector component
 6. snap & floor
 7. animation_player.seek & 取巧
+8. 获取碰撞对象
+9. 法线向量
+10. 法线向量取近似 utils

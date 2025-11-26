@@ -24,8 +24,9 @@ func _ready() -> void:
 	interact_area.body_exited.connect(_on_body_exited)
 
 
-func _on_body_entered(body: CharacterBody2D) -> void:
-	if body is Player:
+func _on_body_entered(body: PhysicsBody2D) -> void:
+	print(body)
+	if body is Player or PushBox:
 		is_pressed = true
 		
 		var _door := doors[0]
@@ -33,8 +34,8 @@ func _on_body_entered(body: CharacterBody2D) -> void:
 		for door in doors:
 			(door as Door).open()
 
-func _on_body_exited(body: CharacterBody2D) -> void:
-	if body is Player:
+func _on_body_exited(body: PhysicsBody2D) -> void:
+	if body is Player or PushBox:
 		is_pressed = false
 		
 		var _door := doors[0]
