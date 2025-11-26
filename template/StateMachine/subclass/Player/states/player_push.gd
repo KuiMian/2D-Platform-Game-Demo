@@ -19,4 +19,4 @@ func Exit() -> void:
 
 
 func default_change() -> void:
-	next_state_str = "Normal" if not Input.is_action_pressed("push&drag") else get_current_state_str()
+	next_state_str = "Normal" if not Input.is_action_pressed("push") else get_current_state_str()

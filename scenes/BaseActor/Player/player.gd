@@ -89,7 +89,7 @@ func check_collider() -> void:
 				force_transition.emit("Die")
 			
 			if collider is PushBox:
-				if Input.is_action_just_pressed("push&drag") and get_main_axis_normal(collision.get_normal()).x != 0:
+				if Input.is_action_just_pressed("push") and get_main_axis_normal(collision.get_normal()).x != 0:
 					push_collision = collision
 					push_object = collider
 					force_transition.emit("Push")
