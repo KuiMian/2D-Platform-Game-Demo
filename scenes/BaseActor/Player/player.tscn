@@ -1411,7 +1411,6 @@ floor_snap_length = 2.0
 script = ExtResource("2_8gpd1")
 PUSH_SPEED = 50
 push_factor = 50
-DEBUG = true
 interval = 0.1
 SPEED = 100.0
 JUMP_SKILL = true

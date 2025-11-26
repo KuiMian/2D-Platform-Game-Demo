@@ -11,6 +11,8 @@ class_name Player
 var push_collision: KinematicCollision2D
 var push_object: PushBox
 
+var drag_collision: KinematicCollision2D
+var drag_object: DragBox
 
 func debug() -> void:
 	print(velocity)
@@ -92,6 +94,12 @@ func check_collider() -> void:
 				if Input.is_action_just_pressed("push") and get_main_axis_normal(collision.get_normal()).x != 0:
 					push_collision = collision
 					push_object = collider
+					force_transition.emit("Push")
+			
+			if collider is DragBox:
+				if Input.is_action_just_pressed("push") and get_main_axis_normal(collision.get_normal()).x != 0:
+					drag_collision = collision
+					drag_object = collider
 					force_transition.emit("Push")
 
 func get_main_axis_normal(normal: Vector2) -> Vector2:
@@ -187,7 +195,7 @@ func physics_process4push(delta: float) -> void:
 	
 	apply_movement(delta, PUSH_SPEED)
 	
-	(push_object as PushBox).apply_central_impulse(- push_collision.get_normal() * push_factor)
+	(drag_object as DragBox).velocity = - drag_collision.get_normal() * velocity.x
 
 
 func exit_push() -> void:
