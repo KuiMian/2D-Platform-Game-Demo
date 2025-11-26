@@ -185,6 +185,8 @@ func enter_push() -> void:
 	
 	reset_velocitiy()
 	
+	fix_face_direction = true
+	
 	ban_skills()
 
 func process4push(_delta: float) -> void:
@@ -201,9 +203,13 @@ func physics_process4push(delta: float) -> void:
 func exit_push() -> void:
 	reset_skills()
 	
+	fix_face_direction = true
+	
 	push_object = null
 	push_collision = null
-
+	
+	drag_object = null
+	drag_collision = null
 
 func ban_skills() -> void:
 	can_jump = false

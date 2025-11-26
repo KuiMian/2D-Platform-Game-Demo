@@ -260,7 +260,7 @@ position = Vector2(72, 160)
 doors = [NodePath("../Door")]
 
 [node name="PushBox" parent="." instance=ExtResource("9_8c41q")]
-position = Vector2(56, 160)
+position = Vector2(160, 48)
 
 [node name="SpikePit" parent="." instance=ExtResource("10_olg7q")]
 position = Vector2(152, 176)
@@ -269,4 +269,7 @@ position = Vector2(152, 176)
 position = Vector2(168, 176)
 
 [node name="DragBox" parent="." instance=ExtResource("11_t1rx8")]
-position = Vector2(104, 48)
+position = Vector2(48, 160)
+collision_layer = 8
+collision_mask = 15
+floor_max_angle = 1.2217305

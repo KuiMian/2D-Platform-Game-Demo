@@ -30,11 +30,14 @@ var move_direction : Direction = Direction.None :
 		move_direction = v
 		_on_move_direction_changed()
 
+# 推箱子状态下左右移动不改变朝向
+var fix_face_direction := false
 var force_face_direction: Direction = Direction.None
 @export var face_direction := Direction.Right :
 	set(v):
 		face_direction = v
-		_on_face_direction_changed()
+		if not fix_face_direction:
+			_on_face_direction_changed()
 
 #endregion Basic physics
 
