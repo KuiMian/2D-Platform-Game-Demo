@@ -13,7 +13,7 @@ var push_object: PushBox
 
 
 func debug() -> void:
-	print(push_factor)
+	print(velocity)
 
 
 func _ready() -> void:
@@ -187,7 +187,6 @@ func physics_process4push(delta: float) -> void:
 	
 	apply_movement(delta, PUSH_SPEED)
 	
-	#print(push_power)
 	(push_object as PushBox).apply_central_impulse(- push_collision.get_normal() * push_factor)
 
 

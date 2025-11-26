@@ -25,8 +25,7 @@ func _ready() -> void:
 
 
 func _on_body_entered(body: PhysicsBody2D) -> void:
-	print(body)
-	if body is Player or PushBox:
+	if body is Player or body is PushBox :
 		is_pressed = true
 		
 		var _door := doors[0]
@@ -35,7 +34,7 @@ func _on_body_entered(body: PhysicsBody2D) -> void:
 			(door as Door).open()
 
 func _on_body_exited(body: PhysicsBody2D) -> void:
-	if body is Player or PushBox:
+	if body is Player or body is PushBox:
 		is_pressed = false
 		
 		var _door := doors[0]

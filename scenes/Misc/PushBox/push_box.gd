@@ -2,7 +2,7 @@ extends RigidBody2D
 class_name PushBox
 
 
-@export var MAX_SPEED := 2
+var MAX_SPEED: float
 
 
 func _integrate_forces(_state: PhysicsDirectBodyState2D) -> void:
