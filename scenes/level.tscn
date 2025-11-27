@@ -238,9 +238,11 @@ position = Vector2(128, 72)
 
 [node name="FallSpike" parent="." instance=ExtResource("4_64w2a")]
 position = Vector2(248, 4)
+detect_length = 100
 
 [node name="FallSpike2" parent="." instance=ExtResource("4_64w2a")]
 position = Vector2(264, 4)
+detect_length = 100
 
 [node name="TilesManager" type="Node2D" parent="."]
 
@@ -281,3 +283,5 @@ position = Vector2(48, 160)
 collision_layer = 8
 collision_mask = 15
 floor_max_angle = 1.2217305
+
+[editable path="FallSpike2"]

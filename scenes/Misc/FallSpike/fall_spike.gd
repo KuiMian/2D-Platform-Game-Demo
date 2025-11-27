@@ -4,8 +4,12 @@ class_name FallSpike
 @export var gravity: int = 100
 
 @onready var ray_cast_2d: RayCast2D = $RayCast2D
+@export var detect_length: int
 
 var can_fall: bool = false
+
+func _ready() -> void:
+	ray_cast_2d.target_position.y = detect_length
 
 
 func _physics_process(delta: float) -> void:
