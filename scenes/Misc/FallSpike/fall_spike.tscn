@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://c5mx85xpe4en"]
+
+[ext_resource type="Script" uid="uid://db70oqyur3jhb" path="res://scenes/Misc/FallSpike/fall_spike.gd" id="1_1y6j2"]
+[ext_resource type="Texture2D" uid="uid://cwkhf76yml1jp" path="res://assets/Objects/misc_sheet.png" id="1_qppss"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1y6j2"]
+size = Vector2(13, 14)
+
+[node name="FallSpike" type="CharacterBody2D"]
+collision_layer = 8
+collision_mask = 3
+script = ExtResource("1_1y6j2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_qppss")
+region_enabled = true
+region_rect = Rect2(0, 48, 24, 24)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_1y6j2")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+collision_mask = 2
