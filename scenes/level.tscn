@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://cqafb5ph5wbw2"]
+[gd_scene load_steps=15 format=4 uid="uid://cqafb5ph5wbw2"]
 
 [ext_resource type="Texture2D" uid="uid://dj2yg01f6ty8k" path="res://assets/Backgrounds/background.png" id="1_2r41h"]
 [ext_resource type="Texture2D" uid="uid://brxwg1qdggtn7" path="res://assets/Backgrounds/bg_2.png" id="2_klq6b"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://by4hknkl0wvs1" path="res://scenes/Misc/PushBox/push_box.tscn" id="9_8c41q"]
 [ext_resource type="PackedScene" uid="uid://yjrrskqvxwd6" path="res://scenes/Misc/SpikePit/spike_pit.tscn" id="10_olg7q"]
 [ext_resource type="PackedScene" uid="uid://djccw5kglruwu" path="res://scenes/Misc/DragBox/drag_box.tscn" id="11_t1rx8"]
+[ext_resource type="PackedScene" uid="uid://b44wpybcovdrq" path="res://scenes/Misc/SpikeClub/spike_club.tscn" id="12_8iemx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p57ef"]
 texture = ExtResource("3_b121j")
@@ -230,6 +231,9 @@ texture = ExtResource("1_2r41h")
 offset_right = 320.0
 offset_bottom = 180.0
 texture = ExtResource("2_klq6b")
+
+[node name="SpikeClub" parent="." instance=ExtResource("12_8iemx")]
+position = Vector2(128, 72)
 
 [node name="TilesManager" type="Node2D" parent="."]
 

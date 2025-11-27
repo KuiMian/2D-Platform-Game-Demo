@@ -86,7 +86,7 @@ func check_collider() -> void:
 			var collision := get_slide_collision(i)
 			var collider := collision.get_collider()
 			
-			if collider is SpikePit:
+			if collider is SpikePit or collider is SpikeClub:
 				#if collision.get_normal() == Vector2.UP:
 				force_transition.emit("Die")
 			
@@ -197,13 +197,17 @@ func physics_process4push(delta: float) -> void:
 	
 	apply_movement(delta, PUSH_SPEED)
 	
-	(drag_object as DragBox).velocity = - drag_collision.get_normal() * velocity.x
+	if push_collision:
+		(push_object as PushBox).apply_central_impulse(- push_collision.get_normal() * push_factor)
+
+	if drag_collision:
+		(drag_object as DragBox).velocity = - drag_collision.get_normal() * velocity.x
 
 
 func exit_push() -> void:
 	reset_skills()
 	
-	fix_face_direction = true
+	fix_face_direction = false
 	
 	push_object = null
 	push_collision = null
