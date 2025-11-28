@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://vp5nir4igai1"]
+
+[ext_resource type="PackedScene" uid="uid://c21x01api80hc" path="res://scenes/BGElements/bg_elements.tscn" id="1_knvxn"]
+
+[node name="Pot" instance=ExtResource("1_knvxn")]
+frame = 8

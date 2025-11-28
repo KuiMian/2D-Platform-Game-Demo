@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://c21x01api80hc"]
+
+[ext_resource type="Texture2D" uid="uid://cwkhf76yml1jp" path="res://assets/Objects/misc_sheet.png" id="1_jjcvf"]
+
+[node name="Shiroom" type="Sprite2D"]
+position = Vector2(0, -12)
+texture = ExtResource("1_jjcvf")
+vframes = 12
+frame = 11

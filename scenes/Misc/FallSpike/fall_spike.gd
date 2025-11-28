@@ -22,16 +22,17 @@ func _physics_process(delta: float) -> void:
 		var collider := ray_cast_2d.get_collider()
 		if collider is Player:
 			can_fall = true
-		
-	if get_slide_collision_count() > 0:
-		for i in get_slide_collision_count():
-			var collision := get_slide_collision(i)
-			var collider = collision.get_collider()
-			if collider is Player:
-				(collider as Player).force_transition.emit("Die")
-			elif collider is TileMapLayer:
-				can_fall = false
-				set_physics_process(false)
+	
+	if can_fall:
+		if get_slide_collision_count() > 0:
+			for i in get_slide_collision_count():
+				var collision := get_slide_collision(i)
+				var collider = collision.get_collider()
+				if collider is Player:
+					(collider as Player).force_transition.emit("Die")
+				elif collider is TileMapLayer:
+					can_fall = false
+					set_physics_process(false)
 			
 		
 		

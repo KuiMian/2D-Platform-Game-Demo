@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://dnylcxh0dhu5r"]
+
+[ext_resource type="Texture2D" uid="uid://cwkhf76yml1jp" path="res://assets/Objects/misc_sheet.png" id="1_j7u5a"]
+[ext_resource type="Script" uid="uid://c2c52jparlgam" path="res://scenes/Misc/Portal/portal.gd" id="2_1xt8f"]
+[ext_resource type="PackedScene" uid="uid://co0mwholai7b6" path="res://scenes/DetectBaseComponent/detect_base_compnent.tscn" id="2_ul78i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ul78i"]
+size = Vector2(12, 16)
+
+[node name="Portal" instance=ExtResource("2_ul78i")]
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("2_1xt8f")
+next_scene = null
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="0"]
+texture = ExtResource("1_j7u5a")
+vframes = 12
+frame = 3
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("RectangleShape2D_ul78i")
