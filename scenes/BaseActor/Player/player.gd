@@ -55,12 +55,15 @@ func physics_process4normal(delta: float) -> void:
 	move_direction = sign(Input.get_axis("move_left", "move_right"))
 	
 	if is_on_floor():
+		is_jumping = false
 		can_jump = true
 	
 	if JUMP_SKILL and Input.is_action_just_pressed("jump"):
 		if is_on_floor() and can_jump:
 			can_jump = false
+			is_jumping = true
 			velocity.y = JUMP_SPEED
+
 
 	
 	apply_gravity(delta)

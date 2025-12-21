@@ -58,8 +58,18 @@ var force_face_direction: Direction = Direction.None
 @export_subgroup("Skills physics")
 @export_subgroup("Skills physics/Jump")
 @export var JUMP_SKILL := false # 是否掌握这个技能
-var can_jump: bool
+var can_jump: bool # 某种情况下不允许跳跃
 @export var JUMP_SPEED := -300
+var is_jumping := false :
+	set(v):
+		if is_jumping != v:
+			is_jumping = v
+			
+			if is_jumping:
+				SoundManager.jump_sfx.play()
+			else:
+				SoundManager.land_sfx.play()
+	
 
 @export_subgroup("Skills physics/Dash")
 @export var DASH_SKILL := false

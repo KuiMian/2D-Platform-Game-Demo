@@ -1,0 +1,19 @@
+[gd_scene load_steps=6 format=3 uid="uid://ctwtjc7sc0rxt"]
+
+[ext_resource type="PackedScene" uid="uid://d4emuwihe4sxu" path="res://scenes/Level/level_template.tscn" id="1_4g686"]
+[ext_resource type="PackedScene" uid="uid://bn5i1qj1x3j7p" path="res://scenes/Level/Background/background.tscn" id="2_isqk3"]
+[ext_resource type="PackedScene" uid="uid://dnylcxh0dhu5r" path="res://scenes/Misc/Portal/portal.tscn" id="3_eouqo"]
+[ext_resource type="PackedScene" uid="uid://c5r5bm336p6uu" path="res://scenes/Level/TilesLayer/tile_map_layer.tscn" id="4_p4m14"]
+[ext_resource type="PackedScene" uid="uid://cfeqd51wrwo6g" path="res://scenes/BaseActor/Player/player.tscn" id="5_vmkqx"]
+
+[node name="Level2" instance=ExtResource("1_4g686")]
+
+[node name="Background" parent="Background" index="0" instance=ExtResource("2_isqk3")]
+
+[node name="Portal" parent="PortalManger" index="0" instance=ExtResource("3_eouqo")]
+position = Vector2(238, 100)
+
+[node name="TileMapLayer" parent="TileManager" index="0" instance=ExtResource("4_p4m14")]
+
+[node name="Player" parent="PlayerManager" index="0" instance=ExtResource("5_vmkqx")]
+position = Vector2(152, 48)

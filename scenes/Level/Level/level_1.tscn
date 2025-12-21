@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dyu2lr6ialgsf"]
+[gd_scene load_steps=18 format=3 uid="uid://dyu2lr6ialgsf"]
 
 [ext_resource type="PackedScene" uid="uid://d4emuwihe4sxu" path="res://scenes/Level/level_template.tscn" id="1_mj4ia"]
 [ext_resource type="PackedScene" uid="uid://bn5i1qj1x3j7p" path="res://scenes/Level/Background/background.tscn" id="2_nd3gx"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://vp5nir4igai1" path="res://scenes/BGElements/pot.tscn" id="4_uffwf"]
 [ext_resource type="PackedScene" uid="uid://cmochjb85k1ce" path="res://scenes/BGElements/root.tscn" id="5_rhxpw"]
 [ext_resource type="PackedScene" uid="uid://dnylcxh0dhu5r" path="res://scenes/Misc/Portal/portal.tscn" id="6_d6bym"]
+[ext_resource type="PackedScene" uid="uid://ctwtjc7sc0rxt" path="res://scenes/Level/Level/level_2.tscn" id="7_jh2dp"]
 [ext_resource type="PackedScene" uid="uid://c5mx85xpe4en" path="res://scenes/Misc/FallSpike/fall_spike.tscn" id="7_uffwf"]
 [ext_resource type="PackedScene" uid="uid://b44wpybcovdrq" path="res://scenes/Misc/SpikeClub/spike_club.tscn" id="8_4p4at"]
 [ext_resource type="PackedScene" uid="uid://djccw5kglruwu" path="res://scenes/Misc/DragBox/drag_box.tscn" id="9_by030"]
@@ -71,7 +72,8 @@ metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
 [node name="Portal" parent="PortalManger" index="0" instance=ExtResource("6_d6bym")]
-position = Vector2(28, 104)
+position = Vector2(32, 100)
+next_scene = ExtResource("7_jh2dp")
 
 [node name="ObjectManager" parent="." index="3"]
 metadata/_edit_group_ = true
