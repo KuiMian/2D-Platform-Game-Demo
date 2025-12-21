@@ -15,7 +15,7 @@ var drag_collision: KinematicCollision2D
 var drag_object: DragBox
 
 func debug() -> void:
-	print(velocity)
+	print(last_velocity_y)
 
 
 func _ready() -> void:
@@ -51,6 +51,8 @@ func enter_normal() -> void:
 
 
 func physics_process4normal(delta: float) -> void:
+	is_in_air = not is_on_floor()
+	last_velocity_y = velocity.y
 	
 	move_direction = sign(Input.get_axis("move_left", "move_right"))
 	

@@ -60,6 +60,21 @@ var force_face_direction: Direction = Direction.None
 @export var JUMP_SKILL := false # 是否掌握这个技能
 var can_jump: bool # 某种情况下不允许跳跃
 @export var JUMP_SPEED := -300
+
+# 记录落地速度，用于动态调用落地音效
+var last_velocity_y := 0.0
+var is_in_air := false :
+	set(v):
+		if is_in_air != v:
+			is_in_air = v
+			
+			if not is_in_air and Engine.get_physics_frames() > 3:
+				# 动态调用
+				#if last_velocity_y > 50:
+				SoundManager.land_sfx.play()
+				#if last_velocity_y > 150:
+					#SoundManager.heavy_land_sfx.play()
+
 var is_jumping := false :
 	set(v):
 		if is_jumping != v:
@@ -67,9 +82,7 @@ var is_jumping := false :
 			
 			if is_jumping:
 				SoundManager.jump_sfx.play()
-			else:
-				SoundManager.land_sfx.play()
-	
+
 
 @export_subgroup("Skills physics/Dash")
 @export var DASH_SKILL := false
