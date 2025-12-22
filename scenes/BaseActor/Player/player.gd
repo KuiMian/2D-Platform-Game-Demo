@@ -65,8 +65,6 @@ func physics_process4normal(delta: float) -> void:
 			can_jump = false
 			is_jumping = true
 			velocity.y = JUMP_SPEED
-
-
 	
 	apply_gravity(delta)
 	apply_movement(delta)
@@ -132,6 +130,8 @@ func enter_dash() -> void:
 	can_dash = false
 	animation_player.play("dash")
 	
+	SoundManager.play_sfx("dash_sfx")
+	
 
 func process4dash(_delta: float) -> void:
 	pass
@@ -149,6 +149,8 @@ func exit_dash() -> void:
 
 func enter_attack() -> void:
 	animation_player.play("attack")
+	
+	SoundManager.play_sfx("attack_sfx")
 
 func process4attack(_delta: float) -> void:
 	pass

@@ -14,3 +14,27 @@ extends Node2D
 @onready var land_sfx: AudioStreamPlayer = $SFX/LandSfx
 @onready var level_finish_sfx: AudioStreamPlayer = $SFX/LevelFinishSfx
 @onready var logo_sfx: AudioStreamPlayer = $SFX/LogoSfx
+
+#@onready var sfx_list: Dictionary = {
+	#"land": $LandSFX,
+	#"jump": $JumpSFX,
+	#"hit": $HitSFX,
+	#"coin": $CoinSFX
+#}
+
+var sfx_list: Dictionary
+
+
+func _ready() -> void:
+	var SFX_NODE: Node2D = get_node("SFX")
+	for sfx in SFX_NODE.get_children():
+		var sfx_name := (sfx as AudioStreamPlayer).name.to_snake_case()
+		sfx_list[sfx_name] = sfx
+
+
+func play_sfx(sfx_name: String) -> void:
+	_play_with_random_pitch(sfx_list[sfx_name])
+
+func _play_with_random_pitch(audio_player: AudioStreamPlayer):
+	audio_player.pitch_scale = randf_range(0.8, 1.2)
+	audio_player.play()

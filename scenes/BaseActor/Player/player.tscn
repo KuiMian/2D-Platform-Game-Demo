@@ -632,9 +632,12 @@ tracks/13/path = NodePath(".")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
-"times": PackedFloat32Array(0.8),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
 "values": [{
+"args": ["die_sfx"],
+"method": &"play_sfx_proxy"
+}, {
 "args": [],
 "method": &"emit_die"
 }]
@@ -1411,7 +1414,6 @@ floor_snap_length = 2.0
 script = ExtResource("2_8gpd1")
 PUSH_SPEED = 50
 push_factor = 50
-DEBUG = true
 interval = 0.1
 SPEED = 100.0
 JUMP_SKILL = true
