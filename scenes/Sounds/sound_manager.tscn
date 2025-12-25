@@ -21,45 +21,56 @@ script = ExtResource("1_7njtb")
 [node name="MenuMusic" type="AudioStreamPlayer" parent="Music"]
 stream = ExtResource("2_n05hs")
 volume_db = -10.0
+bus = &"Music"
 
 [node name="GameStartMusic" type="AudioStreamPlayer" parent="Music"]
 stream = ExtResource("3_hlvcs")
 volume_db = -10.0
+bus = &"Music"
 
 [node name="GameEndMusic" type="AudioStreamPlayer" parent="Music"]
 stream = ExtResource("4_wctqq")
 volume_db = -10.0
+bus = &"Music"
 
 [node name="SFX" type="Node2D" parent="."]
 
 [node name="AttackSfx" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("5_2k6is")
 volume_db = -10.0
+bus = &"SFX"
 
 [node name="ButtonSfx" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("6_03a43")
 volume_db = -10.0
+bus = &"SFX"
 
 [node name="DashSfx" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("7_fyebc")
 volume_db = -10.0
+bus = &"SFX"
 
 [node name="DieSfx" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("8_3hlkw")
 volume_db = -10.0
+bus = &"SFX"
 
 [node name="JumpSfx" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("9_nvuqr")
 volume_db = -10.0
+bus = &"SFX"
 
 [node name="LandSfx" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("10_s8vmy")
 volume_db = -10.0
+bus = &"SFX"
 
 [node name="LevelFinishSfx" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("11_cthi3")
 volume_db = -10.0
+bus = &"SFX"
 
 [node name="LogoSfx" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("12_ij68i")
 volume_db = -10.0
+bus = &"SFX"

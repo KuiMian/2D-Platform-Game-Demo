@@ -1,6 +1,17 @@
 extends CanvasLayer
 
-const LOGO_SCREEN = preload("uid://bm8tel667wynk")
+enum Scenes { LOGO, PRESENT, TITLE, SETTINGS, Level1, Level2 }
+
+var scene_paths: Dictionary[Scenes, String] = {
+	Scenes.LOGO: "res://scenes/SceneManager/logo_screen.tscn",
+	Scenes.PRESENT: "res://scenes/SceneManager/present_screen.tscn",
+	Scenes.TITLE: "res://scenes/SceneManager/title_screen.tscn",
+	Scenes.SETTINGS: "res://scenes/SceneManager/setting_screen.tscn",
+	Scenes.Level1: "res://scenes/Level/Level/level_1.tscn",
+	Scenes.Level2: "res://scenes/Level/Level/level_2.tscn",
+}
+
+
 
 @onready var color_rect: ColorRect = $ColorRect
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
@@ -20,14 +31,18 @@ func _ready() -> void:
 	# 或让系统先处理动画系统，令它无法在本帧内完成销毁动作。
 	#change_scene(LOGO_SCREEN, "DarkFade")
 	
-	change_scene.call_deferred(LOGO_SCREEN, "DarkFade")
+	change_scene.call_deferred(Scenes.LOGO, "DarkFade")
 
-func change_scene(new_scene: PackedScene, trans_anim: String = '') -> void:
+func change_scene(scene_path: Scenes, trans_anim: String = '') -> void:
+	var target_scene := scene_paths[scene_path]
+	
 	if not trans_anim.is_empty():
 		reset_color_rect(trans_anim)
 		animation_player.play(trans_anim)
 	
-	get_tree().change_scene_to_packed(new_scene)
+
+	get_tree().change_scene_to_file(target_scene)
+	
 	last_trans_anim = trans_anim
 
 func get_last_trans_anim_duration() -> float:

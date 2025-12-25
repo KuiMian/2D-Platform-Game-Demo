@@ -1,14 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://cah0elf7lj7gb"]
+[gd_scene load_steps=3 format=3 uid="uid://cah0elf7lj7gb"]
 
 [ext_resource type="Texture2D" uid="uid://km2m144bompn" path="res://assets/UI/presents.png" id="1_nyinw"]
 [ext_resource type="Script" uid="uid://b32otf6bu0qp" path="res://scenes/SceneManager/present_screen.gd" id="2_yuyaj"]
-[ext_resource type="PackedScene" uid="uid://ddkk6tcha4xi7" path="res://scenes/SceneManager/title_screen.tscn" id="3_yuyaj"]
 
 [node name="PresentScreen" type="TextureRect"]
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("1_nyinw")
 script = ExtResource("2_yuyaj")
-next_scene = ExtResource("3_yuyaj")
 
 [node name="Timer" type="Timer" parent="."]

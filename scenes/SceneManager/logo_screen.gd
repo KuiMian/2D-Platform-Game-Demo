@@ -1,7 +1,6 @@
 extends TextureRect
 class_name LogoScreen
 
-@export var next_scene: PackedScene
 var duration := 1
 
 @onready var timer: Timer = $Timer
@@ -16,4 +15,4 @@ func _ready() -> void:
 	timer.start()
 
 func _on_timeout() -> void:
-	SceneManager.change_scene(next_scene)
+	SceneManager.change_scene(SceneManager.Scenes.PRESENT)

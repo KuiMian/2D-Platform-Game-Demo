@@ -2,10 +2,19 @@ extends Node2D
 
 #region UI
 
-var music_volumn_factor: float
-var sfx_volumn_factor: float
+var music_volumn_factor: float :
+	set(v):
+		music_volumn_factor = v
+		AudioServer.set_bus_volume_linear(music_bus_idx, v)
+			
+var sfx_volumn_factor: float :
+	set(v):
+		sfx_volumn_factor = v
+		AudioServer.set_bus_volume_linear(sfx_bus_idx, v)
 
 #endregion UI
+
+#region music & sfx list
 
 # music
 @onready var MUSIC_NODE: Node2D = $Music
@@ -24,17 +33,19 @@ var sfx_volumn_factor: float
 @onready var level_finish_sfx: AudioStreamPlayer = $SFX/LevelFinishSfx
 @onready var logo_sfx: AudioStreamPlayer = $SFX/LogoSfx
 
-#@onready var sfx_list: Dictionary = {
-	#"land": $LandSFX,
-	#"jump": $JumpSFX,
-	#"hit": $HitSFX,
-	#"coin": $CoinSFX
-#}
-
-var sfx_list: Dictionary
 var music_list: Dictionary
+var sfx_list: Dictionary
+
+var music_bus_idx: int
+var sfx_bus_idx: int
+
+#endregion music & sfx list
+
 
 func _ready() -> void:
+	music_bus_idx = AudioServer.get_bus_index("Music")
+	sfx_bus_idx = AudioServer.get_bus_index("SFX")
+	
 	for music in MUSIC_NODE.get_children():
 		var music_name := (music as AudioStreamPlayer).name.to_snake_case()
 		music_list[music_name] = music
