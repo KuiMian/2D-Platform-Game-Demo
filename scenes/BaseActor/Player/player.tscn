@@ -1408,7 +1408,7 @@ _data = {
 
 [node name="Player" instance=ExtResource("1_4ij0j")]
 collision_layer = 2
-collision_mask = 9
+collision_mask = 13
 floor_max_angle = 1.2217305
 floor_snap_length = 2.0
 script = ExtResource("2_8gpd1")

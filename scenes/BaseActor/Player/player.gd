@@ -89,7 +89,7 @@ func check_collider() -> void:
 			var collision := get_slide_collision(i)
 			var collider := collision.get_collider()
 			
-			if collider is SpikePit or collider is SpikeClub:
+			if collider is SpikePit or collider is SpikeClub or collider is Mushroom:
 				#if collision.get_normal() == Vector2.UP:
 				force_transition.emit("Die")
 			

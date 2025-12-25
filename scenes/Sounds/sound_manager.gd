@@ -1,5 +1,12 @@
 extends Node2D
 
+#region UI
+
+var music_volumn_factor: float
+var sfx_volumn_factor: float
+
+#endregion UI
+
 # music
 @onready var MUSIC_NODE: Node2D = $Music
 @onready var menu_music: AudioStreamPlayer = $Music/MenuMusic
@@ -35,7 +42,6 @@ func _ready() -> void:
 	for sfx in SFX_NODE.get_children():
 		var sfx_name := (sfx as AudioStreamPlayer).name.to_snake_case()
 		sfx_list[sfx_name] = sfx
-	
 
 
 func play_sfx(sfx_name: String) -> void:
