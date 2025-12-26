@@ -33,6 +33,8 @@ func _ready() -> void:
 	
 	change_scene.call_deferred(Scenes.LOGO, "DarkFade")
 
+#region change scene
+
 func change_scene(scene_path: Scenes, trans_anim: String = '') -> void:
 	var target_scene := scene_paths[scene_path]
 	
@@ -60,3 +62,8 @@ func reset_color_rect(anim) -> void:
 			color_rect.color = color_light
 		"ResetLevelFade":
 			color_rect.color = color_dark
+
+#endregion change scene
+
+func restart_level() -> void:
+	pass

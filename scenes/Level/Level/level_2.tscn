@@ -12,6 +12,7 @@
 
 [node name="Portal" parent="PortalManger" index="0" instance=ExtResource("3_eouqo")]
 position = Vector2(238, 100)
+next_scene = 4
 
 [node name="TileMapLayer" parent="TileManager" index="0" instance=ExtResource("4_p4m14")]
 

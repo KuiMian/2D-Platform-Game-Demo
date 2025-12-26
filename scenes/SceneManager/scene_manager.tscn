@@ -52,7 +52,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_f5krt"]
-resource_name = "RestartLevelFade"
+resource_name = "ResetLevelFade"
 length = 2.5
 step = 0.5
 tracks/0/type = "value"
@@ -73,7 +73,7 @@ _data = {
 &"DarkFade": SubResource("Animation_xjsj7"),
 &"LightFade": SubResource("Animation_5752s"),
 &"RESET": SubResource("Animation_5h8xx"),
-&"RestartLevelFade": SubResource("Animation_f5krt")
+&"ResetLevelFade": SubResource("Animation_f5krt")
 }
 
 [node name="SceneManager" type="CanvasLayer"]
