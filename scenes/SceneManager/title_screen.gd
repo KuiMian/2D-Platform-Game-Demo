@@ -13,15 +13,15 @@ func _ready() -> void:
 
 
 func _on_start_button_down() -> void:
-	SoundManager.button_sfx.play()
+	AudioManager.button_sfx.play()
 
 func _on_start_button_up() -> void:
-	SoundManager.stop_all_music()
+	AudioManager.stop_all_music()
 	SceneManager.change_scene(SceneManager.Scenes.Level1, "DarkFade")
-	SoundManager.game_start_music.play()
+	AudioManager.game_start_music.play()
 
 func _on_setting_button_down() -> void:
-	SoundManager.button_sfx.play()
+	AudioManager.button_sfx.play()
 
 func _on_setting_button_up() -> void:
 	SceneManager.change_scene(SceneManager.Scenes.SETTINGS, "DarkFade")

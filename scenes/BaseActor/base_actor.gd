@@ -72,9 +72,9 @@ var is_in_air := false :
 			if not is_in_air:
 				# 动态调用
 				if last_velocity_y > 50:
-					SoundManager.play_sfx("land_sfx")
+					AudioManager.play_sfx("land_sfx")
 				#if last_velocity_y > 150:
-					#SoundManager.heavy_land_sfx.play()
+					#AudioManager.heavy_land_sfx.play()
 
 var is_jumping := false :
 	set(v):
@@ -82,7 +82,7 @@ var is_jumping := false :
 			is_jumping = v
 			
 			if is_jumping:
-				SoundManager.play_sfx("jump_sfx")
+				AudioManager.play_sfx("jump_sfx")
 
 
 @export_subgroup("Skills physics/Dash")
@@ -238,6 +238,6 @@ func reset_velocitiy() -> void:
 
 func play_sfx_proxy(sfx_name: String):
 	# 调用全局单例
-	SoundManager.play_sfx(sfx_name)
+	AudioManager.play_sfx(sfx_name)
 
 #endregion utils

@@ -130,7 +130,7 @@ func enter_dash() -> void:
 	can_dash = false
 	animation_player.play("dash")
 	
-	SoundManager.play_sfx("dash_sfx")
+	AudioManager.play_sfx("dash_sfx")
 	
 
 func process4dash(_delta: float) -> void:
@@ -150,7 +150,7 @@ func exit_dash() -> void:
 func enter_attack() -> void:
 	animation_player.play("attack")
 	
-	SoundManager.play_sfx("attack_sfx")
+	AudioManager.play_sfx("attack_sfx")
 
 func process4attack(_delta: float) -> void:
 	pass

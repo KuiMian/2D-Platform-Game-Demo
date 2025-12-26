@@ -18,7 +18,7 @@ config/icon="uid://bme0grwrds6vc"
 
 [autoload]
 
-SoundManager="*res://scenes/Sounds/sound_manager.tscn"
+AudioManager="*res://scenes/AudioManager/audio_manager.tscn"
 SceneManager="*res://scenes/SceneManager/scene_manager.tscn"
 Saving="*res://scenes/Saving/saving.gd"
 

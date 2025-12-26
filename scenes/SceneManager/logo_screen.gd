@@ -6,8 +6,8 @@ var duration := 1
 @onready var timer: Timer = $Timer
 
 func _ready() -> void:
-	SoundManager.stop_all_music()
-	SoundManager.play_sfx("logo_sfx")
+	AudioManager.stop_all_music()
+	AudioManager.play_sfx("logo_sfx")
 	
 	timer.wait_time = SceneManager.get_last_trans_anim_duration() + duration
 	timer.timeout.connect(_on_timeout)

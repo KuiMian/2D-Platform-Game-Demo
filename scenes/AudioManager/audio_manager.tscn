@@ -1,0 +1,76 @@
+[gd_scene load_steps=13 format=3 uid="uid://dhds6pwcre7mj"]
+
+[ext_resource type="Script" uid="uid://bkf3n2otjriuo" path="res://scenes/AudioManager/audio_manager.gd" id="1_u7qeh"]
+[ext_resource type="AudioStream" uid="uid://b0qobchiwsfyq" path="res://assets/Music/TitleScreenMusic.wav" id="2_pee7i"]
+[ext_resource type="AudioStream" uid="uid://bl8o5kc3ay7a6" path="res://assets/Music/GamePlayMusic.wav" id="3_hajdh"]
+[ext_resource type="AudioStream" uid="uid://bhg2g7agwxf63" path="res://assets/Music/EndingMusic.wav" id="4_lw6e8"]
+[ext_resource type="AudioStream" uid="uid://de76kokmgu1be" path="res://assets/SoundEffects/Attack.wav" id="5_d2lmh"]
+[ext_resource type="AudioStream" uid="uid://ot7236jc550" path="res://assets/SoundEffects/ButtonSounds.wav" id="6_47ttr"]
+[ext_resource type="AudioStream" uid="uid://c1nn7yv3k7vd6" path="res://assets/SoundEffects/Dash.wav" id="7_4y5j2"]
+[ext_resource type="AudioStream" uid="uid://bqau7pq3ilke3" path="res://assets/SoundEffects/Death.wav" id="8_3h8xd"]
+[ext_resource type="AudioStream" uid="uid://gdx0goacv7pt" path="res://assets/SoundEffects/Jump.wav" id="9_j3fn7"]
+[ext_resource type="AudioStream" uid="uid://c1pg8kkv7b8er" path="res://assets/SoundEffects/Land.wav" id="10_moqbo"]
+[ext_resource type="AudioStream" uid="uid://uer3vg04jna5" path="res://assets/SoundEffects/LevelComplete.wav" id="11_34dyi"]
+[ext_resource type="AudioStream" uid="uid://c75xtotla4svk" path="res://assets/SoundEffects/Logo.wav" id="12_15nob"]
+
+[node name="AudioManager" type="Node2D"]
+script = ExtResource("1_u7qeh")
+
+[node name="Music" type="Node2D" parent="."]
+
+[node name="MenuMusic" type="AudioStreamPlayer" parent="Music"]
+stream = ExtResource("2_pee7i")
+volume_db = -10.0
+bus = &"Music"
+
+[node name="GameStartMusic" type="AudioStreamPlayer" parent="Music"]
+stream = ExtResource("3_hajdh")
+volume_db = -10.0
+bus = &"Music"
+
+[node name="GameEndMusic" type="AudioStreamPlayer" parent="Music"]
+stream = ExtResource("4_lw6e8")
+volume_db = -10.0
+bus = &"Music"
+
+[node name="SFX" type="Node2D" parent="."]
+
+[node name="AttackSfx" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("5_d2lmh")
+volume_db = -10.0
+bus = &"SFX"
+
+[node name="ButtonSfx" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("6_47ttr")
+volume_db = -10.0
+bus = &"SFX"
+
+[node name="DashSfx" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("7_4y5j2")
+volume_db = -10.0
+bus = &"SFX"
+
+[node name="DieSfx" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("8_3h8xd")
+volume_db = -10.0
+bus = &"SFX"
+
+[node name="JumpSfx" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("9_j3fn7")
+volume_db = -10.0
+bus = &"SFX"
+
+[node name="LandSfx" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("10_moqbo")
+volume_db = -10.0
+bus = &"SFX"
+
+[node name="LevelFinishSfx" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("11_34dyi")
+volume_db = -10.0
+bus = &"SFX"
+
+[node name="LogoSfx" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("12_15nob")
+volume_db = -10.0
+bus = &"SFX"
